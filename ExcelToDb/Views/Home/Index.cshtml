@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h3>
+    @TempData["Message"]
+</h3>
+@using (Html.BeginForm("UploadExcelDataReader", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset style="margin-top:50px">
+        <input type="file" name="File" style="display: block" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+        <button type="submit">Dodaj ExcelDataReader</button>
+    </fieldset>
+}
+<br />
+@using (Html.BeginForm("UploadMicrosoftOfficeInteropExcel", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset style="margin-top:50px">
+        <input type="file" name="File" style="display: block" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+        <button type="submit">Dodaj MicrosoftOfficeInteropExcel</button>
+    </fieldset>
+}
+<br />
